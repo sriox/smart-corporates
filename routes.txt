@@ -1,0 +1,113 @@
+
+  GET|HEAD        / ........................................................................................................................................... welcome › WelcomeController
+  GET|HEAD        _debugbar/assets/javascript ................................................................................. debugbar.assets.js › Barryvdh\Debugbar › AssetController@js
+  GET|HEAD        _debugbar/assets/stylesheets .............................................................................. debugbar.assets.css › Barryvdh\Debugbar › AssetController@css
+  DELETE          _debugbar/cache/{key}/{tags?} ........................................................................ debugbar.cache.delete › Barryvdh\Debugbar › CacheController@delete
+  GET|HEAD        _debugbar/clockwork/{id} ....................................................................... debugbar.clockwork › Barryvdh\Debugbar › OpenHandlerController@clockwork
+  GET|HEAD        _debugbar/open .................................................................................. debugbar.openhandler › Barryvdh\Debugbar › OpenHandlerController@handle
+  POST            _debugbar/queries/explain ...................................................................... debugbar.queries.explain › Barryvdh\Debugbar › QueriesController@explain
+  POST            _ignition/execute-solution ................................................................ ignition.executeSolution › Spatie\LaravelIgnition › ExecuteSolutionController
+  GET|HEAD        _ignition/health-check ............................................................................ ignition.healthCheck › Spatie\LaravelIgnition › HealthCheckController
+  POST            _ignition/update-config ......................................................................... ignition.updateConfig › Spatie\LaravelIgnition › UpdateConfigController
+  GET|HEAD        api/companies ........................................................................................................................... Company\CompanyController@index
+  POST            api/monitoring/emails/mailgun ..................................................................... monitoring.mail.mailgun › Monitoring\MailMonitoringController@mailgun
+  GET|HEAD        api/poll-instances/{id}/results/by-dimension .............................. api.pollInstance.resultsByDimension › Operations\PollInstanceController@getResultsByDimension
+  GET|HEAD        api/poll-instances/{id}/results/by-dimension-attribute .. api.pollInstance.resultsByDimensionAttribute › Operations\PollInstanceController@getResultsByDimensionAttribute
+  GET|HEAD        api/poll-instances/{id}/results/by-dimension-attribute-variable api.pollInstance.resultsByDimensionAttributeVariable › Operations\PollInstanceController@getResultsByDim…
+  GET|HEAD        api/poll-instances/{id}/results/deviation-by-attribute ................... api.pollInstance.deviationByAttribute › Operations\PollInstanceController@deviationByAttribute
+  GET|HEAD        api/poll-instances/{id}/results/deviation-by-dimension ................... api.pollInstance.deviationByDimension › Operations\PollInstanceController@deviationByDimension
+  GET|HEAD        api/poll-instances/{id}/results/deviation-by-variable ...................... api.pollInstance.deviationByVariable › Operations\PollInstanceController@deviationByVariable
+  GET|HEAD        api/poll-instances/{id}/results/engage-result ......................................... api.pollInstance.engageResult › Operations\PollInstanceController@getEngageResult
+  GET|HEAD        api/poll-instances/{id}/results/enp-result ................................... api.pollInstance.enpResult › Operations\PollInstanceController@getEmployeeNetPromoteResult
+  GET|HEAD        api/poll-instances/{id}/results/general-result ...................................... api.pollInstance.generalResult › Operations\PollInstanceController@getGeneralResult
+  GET|HEAD        api/poll-instances/{id}/results/poll-results ............................................ api.pollInstance.pollResults › Operations\PollInstanceController@getPollResults
+  GET|HEAD        api/poll-instances/{id}/results/ponderated-result ............................. api.pollInstance.ponderatedResult › Operations\PollInstanceController@getPonderatedResult
+  GET|HEAD        api/poll-instances/{id}/results/top-high-attribute-results ............ api.pollInstance.topHighAttributeResults › Operations\PollInstanceController@getTopHighAttributes
+  GET|HEAD        api/poll-instances/{id}/results/top-high-indicator-results ............ api.pollInstance.topHighIndicatorResults › Operations\PollInstanceController@getTopHighIndicators
+  GET|HEAD        api/poll-instances/{id}/results/top-low-attribute-results ............... api.pollInstance.topLowAttributeResults › Operations\PollInstanceController@getTopLowAttributes
+  GET|HEAD        api/poll-instances/{id}/results/top-low-indicator-results ............... api.pollInstance.topLowIndicatorResults › Operations\PollInstanceController@getTopLowIndicators
+  GET|HEAD        api/poll-instances/{id}/results/words .............................................. api.pollInstance.words › Operations\PollInstanceController@getOpenQuestionsWithWords
+  POST            api/poll-instances/{pollInstance}/send-invitations ..................................... pollInstance.sendInvitations › Operations\PollInstanceController@sendInvitations
+  GET|HEAD        api/polls/{id}/dimensions ..................................................................................... api.poll.dimensions › Poll\PollController@dimensionsIndex
+  GET|HEAD        api/user ................................................................................................................................................................ 
+  GET|POST|HEAD   broadcasting/auth ............................................................................................ Illuminate\Broadcasting › BroadcastController@authenticate
+  GET|HEAD        companies ............................................................................................................. companies.index › Company\CompanyController@index
+  POST            companies ............................................................................................................. companies.store › Company\CompanyController@store
+  GET|HEAD        companies/create .................................................................................................... companies.create › Company\CompanyController@create
+  GET|HEAD        companies/{company} ..................................................................................................... companies.show › Company\CompanyController@show
+  PUT|PATCH       companies/{company} ................................................................................................. companies.update › Company\CompanyController@update
+  DELETE          companies/{company} ............................................................................................... companies.destroy › Company\CompanyController@destroy
+  GET|HEAD        companies/{company}/edit ................................................................................................ companies.edit › Company\CompanyController@edit
+  GET|HEAD        companies/{company}/people ....................................................................................... company.people › Company\CompanyController@peopleIndex
+  GET|HEAD        companies/{company}/polls .................................................................................. company.polls › Company\CompanyController@pollInstancesIndex
+  POST            companies/{company}/polls ............................................................................ company.polls.store › Company\CompanyController@pollInstancesStore
+  PUT             current-team ..................................................................................... current-team.update › Laravel\Jetstream › CurrentTeamController@update
+  GET|HEAD        dashboard ..................................................................................................................................................... dashboard
+  GET|HEAD        forgot-password ................................................................................. password.request › Laravel\Fortify › PasswordResetLinkController@create
+  POST            forgot-password .................................................................................... password.email › Laravel\Fortify › PasswordResetLinkController@store
+  GET|HEAD        login ................................................................................................... login › Laravel\Fortify › AuthenticatedSessionController@create
+  POST            login .............................................................................................. login.store › Laravel\Fortify › AuthenticatedSessionController@store
+  POST            logout ................................................................................................ logout › Laravel\Fortify › AuthenticatedSessionController@destroy
+  GET|HEAD        poll-instances/{id}/demographics-downloads ................................. pollInstance.demographicsDownloads › Operations\PollInstanceController@demographicsDownloads
+  GET|HEAD        poll-instances/{id}/download-demographic-group ....................... pollInstance.downloadDemographicGroup › Operations\PollInstanceController@downloadDemographicGroup
+  GET|HEAD        poll-instances/{id}/reach-age-ranges ................................................... pollInstance.reachAgeRanges › Operations\PollInstanceController@reachByAgeRanges
+  GET|HEAD        poll-instances/{id}/reach-areas ................................................................ pollInstance.reachAreas › Operations\PollInstanceController@reachByAreas
+  GET|HEAD        poll-instances/{id}/reach-company-levels ....................................... pollInstance.reachCompanyLevels › Operations\PollInstanceController@reachByCompanyLevels
+  GET|HEAD        poll-instances/{id}/reach-divisions .................................................... pollInstance.reachDivisions › Operations\PollInstanceController@reachByDivisions
+  GET|HEAD        poll-instances/{id}/reach-genders .......................................................... pollInstance.reachGenders › Operations\PollInstanceController@reachByGenders
+  GET|HEAD        poll-instances/{id}/reach-service-time ............................................. pollInstance.reachServiceTime › Operations\PollInstanceController@reachByServiceTime
+  GET|HEAD        poll-instances/{pollInstance}/participants .............................................. pollInstance.participants › Operations\PollInstanceController@participantsIndex
+  GET|HEAD        poll-instances/{pollInstance}/report ................................................................. pollInstance.report › Operations\PollInstanceController@showReport
+  POST            poll-instances/{pollInstance}/send-reminder .................................................. pollInstance.sendReminder › Operations\PollInstanceController@sendReminder
+  GET|HEAD        polls ........................................................................................................................... polls.index › Poll\PollController@index
+  POST            polls ........................................................................................................................... polls.store › Poll\PollController@store
+  GET|HEAD        polls/create .................................................................................................................. polls.create › Poll\PollController@create
+  GET|HEAD        polls/{id}/questions ..................................................................................................... poll.questions › Poll\QuestionController@index
+  GET|HEAD        polls/{poll} ...................................................................................................................... polls.show › Poll\PollController@show
+  PUT|PATCH       polls/{poll} .................................................................................................................. polls.update › Poll\PollController@update
+  DELETE          polls/{poll} ................................................................................................................ polls.destroy › Poll\PollController@destroy
+  GET|HEAD        polls/{poll}/edit ................................................................................................................. polls.edit › Poll\PollController@edit
+  GET|HEAD        register ................................................................................................... register › Laravel\Fortify › RegisteredUserController@create
+  POST            register .............................................................................................. register.store › Laravel\Fortify › RegisteredUserController@store
+  POST            reset-password .......................................................................................... password.update › Laravel\Fortify › NewPasswordController@store
+  GET|HEAD        reset-password/{token} .................................................................................. password.reset › Laravel\Fortify › NewPasswordController@create
+  GET|HEAD        sanctum/csrf-cookie ................................................................................... sanctum.csrf-cookie › Laravel\Sanctum › CsrfCookieController@show
+  GET|HEAD        submit/{code} ........................................................................................................... poll.start › Operations\SubmitController@submit
+  POST            submit/{code} .................................................................................... demographic.submit › Operations\SubmitController@submitDemographicInfo
+  POST            submit/{code}/answers ......................................................................................... answers.submit › Operations\SubmitController@storeAnswers
+  GET|HEAD        submit/{code}/finish ........................................................................................... submit.finish › Operations\SubmitController@finishSubmit
+  GET|HEAD        submit/{code}/open-questions ......................................................................... openQuestions.show › Operations\SubmitController@showOpenQuestions
+  POST            submit/{code}/open-questions ....................................................................... openQuestions.store › Operations\SubmitController@storeOpenQuestions
+  GET|HEAD        submit/{code}/questions ...................................................................................... questions.show › Operations\SubmitController@pollQuestions
+  GET|HEAD        team-invitations/{invitation} ............................................................. team-invitations.accept › Laravel\Jetstream › TeamInvitationController@accept
+  DELETE          team-invitations/{invitation} ........................................................... team-invitations.destroy › Laravel\Jetstream › TeamInvitationController@destroy
+  POST            teams ............................................................................................................ teams.store › Laravel\Jetstream › TeamController@store
+  GET|HEAD        teams/create ................................................................................................... teams.create › Laravel\Jetstream › TeamController@create
+  GET|HEAD        teams/{team} ....................................................................................................... teams.show › Laravel\Jetstream › TeamController@show
+  PUT             teams/{team} ................................................................................................... teams.update › Laravel\Jetstream › TeamController@update
+  DELETE          teams/{team} ................................................................................................. teams.destroy › Laravel\Jetstream › TeamController@destroy
+  POST            teams/{team}/members ................................................................................ team-members.store › Laravel\Jetstream › TeamMemberController@store
+  PUT             teams/{team}/members/{user} ....................................................................... team-members.update › Laravel\Jetstream › TeamMemberController@update
+  DELETE          teams/{team}/members/{user} ..................................................................... team-members.destroy › Laravel\Jetstream › TeamMemberController@destroy
+  GET|HEAD        test ......................................................................................................................................... Tests\TestController@index
+  GET|HEAD        two-factor-challenge ................................................................ two-factor.login › Laravel\Fortify › TwoFactorAuthenticatedSessionController@create
+  POST            two-factor-challenge ........................................................... two-factor.login.store › Laravel\Fortify › TwoFactorAuthenticatedSessionController@store
+  DELETE          user ........................................................................................... current-user.destroy › Laravel\Jetstream › CurrentUserController@destroy
+  GET|HEAD        user/confirm-password ........................................................................... password.confirm › Laravel\Fortify › ConfirmablePasswordController@show
+  POST            user/confirm-password .................................................................... password.confirm.store › Laravel\Fortify › ConfirmablePasswordController@store
+  GET|HEAD        user/confirmed-password-status ......................................................... password.confirmation › Laravel\Fortify › ConfirmedPasswordStatusController@show
+  POST            user/confirmed-two-factor-authentication ........................................ two-factor.confirm › Laravel\Fortify › ConfirmedTwoFactorAuthenticationController@store
+  DELETE          user/other-browser-sessions ................................................. other-browser-sessions.destroy › Laravel\Jetstream › OtherBrowserSessionsController@destroy
+  PUT             user/password ........................................................................................ user-password.update › Laravel\Fortify › PasswordController@update
+  GET|HEAD        user/profile .............................................................................................. profile.show › Laravel\Jetstream › UserProfileController@show
+  PUT             user/profile-information ........................................................ user-profile-information.update › Laravel\Fortify › ProfileInformationController@update
+  DELETE          user/profile-photo ...................................................................... current-user-photo.destroy › Laravel\Jetstream › ProfilePhotoController@destroy
+  POST            user/two-factor-authentication ............................................................ two-factor.enable › Laravel\Fortify › TwoFactorAuthenticationController@store
+  DELETE          user/two-factor-authentication ......................................................... two-factor.disable › Laravel\Fortify › TwoFactorAuthenticationController@destroy
+  GET|HEAD        user/two-factor-qr-code ........................................................................... two-factor.qr-code › Laravel\Fortify › TwoFactorQrCodeController@show
+  GET|HEAD        user/two-factor-recovery-codes ............................................................... two-factor.recovery-codes › Laravel\Fortify › RecoveryCodeController@index
+  POST            user/two-factor-recovery-codes ........................................................................................... Laravel\Fortify › RecoveryCodeController@store
+  GET|HEAD        user/two-factor-secret-key .................................................................. two-factor.secret-key › Laravel\Fortify › TwoFactorSecretKeyController@show
+
+                                                                                                                                                                       Showing [109] routes
+

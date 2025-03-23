@@ -6,6 +6,7 @@ import { createInertiaApp } from '@inertiajs/inertia-vue3'
 import { InertiaProgress } from '@inertiajs/progress'
 import { resolvePageComponent } from 'laravel-vite-plugin/inertia-helpers'
 import { ZiggyVue } from '../../vendor/tightenco/ziggy/dist/vue.m'
+import { usePage } from '@inertiajs/inertia-vue3'
 
 /* import the fontawesome core */
 import { library } from '@fortawesome/fontawesome-svg-core'
@@ -43,6 +44,26 @@ import moment from 'moment'
 
 const appName = window.document.getElementsByTagName('title')[0]?.innerText || 'Laravel'
 
+// Plugin para acceder al usuario actual de forma global
+const userPlugin = {
+    install: (app, options) => {
+        app.config.globalProperties.$user = {
+            get current() {
+                return usePage().props.value.auth.user
+            },
+            get name() {
+                return this.current?.name
+            },
+            get email() {
+                return this.current?.email
+            },
+            get isLoggedIn() {
+                return !!this.current
+            }
+        }
+    }
+}
+
 createInertiaApp({
     title: (title) => `${title} - ${appName}`,
     resolve: (name) => resolvePageComponent(`./Pages/${name}.vue`, import.meta.glob('./Pages/**/*.vue')),
@@ -50,6 +71,7 @@ createInertiaApp({
         const app = createApp({ render: () => h(App, props) })
             .use(plugin)
             .use(ZiggyVue, Ziggy)
+            .use(userPlugin)
             .component('AppLayout', AppLayout)
             .component('Button', Button)
             .component('Checkbox', Checkbox)

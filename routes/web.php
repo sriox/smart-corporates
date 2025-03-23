@@ -6,6 +6,7 @@ use App\Http\Controllers\Operations\SubmitController;
 use App\Http\Controllers\Poll\PollController;
 use App\Http\Controllers\Poll\QuestionController;
 use App\Http\Controllers\Tests\TestController;
+use App\Http\Controllers\WelcomeController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
@@ -21,14 +22,7 @@ use Inertia\Inertia;
 |
 */
 
-Route::get('/', function () {
-    return Inertia::render('Welcome', [
-        'canLogin' => Route::has('login'),
-        'canRegister' => Route::has('register'),
-        'laravelVersion' => Application::VERSION,
-        'phpVersion' => PHP_VERSION,
-    ]);
-});
+Route::get('/', WelcomeController::class)->name('welcome');
 
 Route::get('test', [TestController::class, 'index']);
 

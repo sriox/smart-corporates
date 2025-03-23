@@ -9,8 +9,20 @@ declare global {
             }
             auth: {
                 user: {
+                    id: number
                     name: string
-                }
+                    email: string
+                    current_team_id?: number
+                    current_team?: {
+                        id: number
+                        name: string
+                    }
+                    all_teams?: Array<{
+                        id: number
+                        name: string
+                    }>
+                    profile_photo_url?: string
+                } | null
             }
             laravelVersion: string
             phpVersion: string
